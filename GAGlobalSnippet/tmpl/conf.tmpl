@@ -1,0 +1,32 @@
+<mtapp:setting
+  id="mdcGAProfile"
+  label="<__trans phrase="Google Analytics Profile ID">"
+  show_hint="1"
+  hint="example: UA-12345-6"
+>
+<p>
+  <input placeholder="UA-XXXX-Y" type="text" name="mdcGAProfile" id="mdcGAProfile" value="<mt:if name="mdcGAProfile"><mt:var name="mdcGAProfile"></mt:if>" />
+</p>
+</mtapp:setting>
+
+<mtapp:setting
+  id="mdcGADomain"
+  label="<__trans phrase="Domain"> :"
+  show_hint="1"
+  hint="<__trans phrase="Set to the domain of your site. There is this option in the tracking cord of the administration page of Google Analytics.">"
+>
+<p>
+  <input placeholder="example.com" type="text" name="mdcGADomain" id="mdcGADomain" value="<mt:if name="mdcGADomain"><mt:var name="mdcGADomain"></mt:if>" />
+</p>
+</mtapp:setting>
+
+
+<mtapp:setting
+    id="mdcGACustom"
+    label="<__trans phrase="Google Analytics custom snippet">"
+    show_hint="1"
+hint="cf. https://developers.google.com/analytics/devguides/collection/analyticsjs/advanced
+<br><__trans phrase="For master. If you set the profile ID then you can output to the normal code.">"
+>
+    <textarea name="mdcGACustom" id="mdcGACustom" rows="4" style="width: 100%;"><mt:var name="mdcGACustom"></textarea>
+</mtapp:setting>
