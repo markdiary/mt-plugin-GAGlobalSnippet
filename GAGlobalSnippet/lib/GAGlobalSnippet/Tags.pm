@@ -6,11 +6,14 @@ use base qw(MT::Plugin);
 sub _hdlr_google_analytics {
     my ($ctx, $args, $cond) = @_;
     my $create = "";
+    my $GAProfile = "";
+    my $GADomain = "";
     my $plugin = MT->component("GAGlobalSnippet");
     my $scope = "blog:".$ctx->stash('blog_id');
-    my $GAProfile = $args->{profile} ne "" ?  $args->{profile} : $plugin->get_config_value('mdcGAProfile',$scope);
-    my $GADomain =  $args->{domain} ne "" ? $args->{domain} : $plugin->get_config_value('mdcGADomain',$scope);
     my $GACustom = $plugin->get_config_value('mdcGACustom',$scope);
+    $GAProfile = $args->{profile} ne "" ?  $args->{profile} : $plugin->get_config_value('mdcGAProfile',$scope);
+    $GADomain =  $args->{domain} ne "" ? $args->{domain} : $plugin->get_config_value('mdcGADomain',$scope);
+
     if($GACustom ne ""){
         $GACustom =~ s/[\x00-\x1F\x7F]//g;
     }
