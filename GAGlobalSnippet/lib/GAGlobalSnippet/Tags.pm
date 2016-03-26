@@ -22,7 +22,7 @@ sub _hdlr_google_analytics {
 # Exclude  Preview Mode
     my $app = MT->instance;
     my $mode = $app->mode;
-    return '' if  $mode =~ /^preview_/;
+    return '' if $mode =~ /^preview_|^api/;
 
     my $out = <<"GASNIPPET";
 <script type="text/javascript">
