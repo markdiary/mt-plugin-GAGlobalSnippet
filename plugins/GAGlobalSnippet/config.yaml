@@ -1,21 +1,18 @@
 id: GAGlobalSnippet
 key: GAGlobalSnippet
 name: GoogleAnalytics Global Snippet
-version: 0.1
-description:  <__trans phrase="Google Anaritics global snippet functiontag">
+version: 2.0
+description:  <__trans phrase="Google Anaritics gtag.js functiontag">
 author_name: maRk
 author_link: http://labs.markdiary.com/
 doc_link: http://labs.markdiary.com/logs/2014/05/google-analytics-global-snippet-plugin.html
 
 blog_config_template: conf.tmpl
 settings:
-    mdcGAProfile:
+    mdcGTAGmeasurement:
         Default: ''
         Scope: blog
-    mdcGADomain:
-        Default: 'auto'
-        Scope: blog
-    mdcGACustom:
+    mdcGTAGCustom:
         Default: ''
         Scope: blog
 l10n_lexicon:

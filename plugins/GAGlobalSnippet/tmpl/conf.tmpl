@@ -1,32 +1,37 @@
 <mtapp:setting
-  id="mdcGAProfile"
-  label="<__trans phrase="Google Analytics Profile ID">"
+  id="mdcGTAGmeasurement"
+  label="<__trans phrase="">"
   show_hint="1"
-  hint="example: UA-12345-6"
+  hint="example: G-TAGMeasurement-ID"
 >
 <p>
-  <input placeholder="UA-XXXX-Y" type="text" name="mdcGAProfile" id="mdcGAProfile" value="<mt:if name="mdcGAProfile"><mt:var name="mdcGAProfile"></mt:if>" />
+  <input placeholder="G-TAGMeasurement-ID" type="text" name="mdcGTAGmeasurement" id="mdcGTAGmeasurement" value="<mt:if name="mdcGTAGmeasurement"><mt:var name="mdcGTAGmeasurement"></mt:if>" />
 </p>
 </mtapp:setting>
 
 <mtapp:setting
-  id="mdcGADomain"
-  label="<__trans phrase="Domain"> :"
-  show_hint="1"
-  hint="<__trans phrase="Set to the domain of your site. There is this option in the tracking cord of the administration page of Google Analytics.">"
->
-<p>
-  <input placeholder="example.com" type="text" name="mdcGADomain" id="mdcGADomain" value="<mt:if name="mdcGADomain"><mt:var name="mdcGADomain"></mt:if>" />
-</p>
-</mtapp:setting>
-
-
-<mtapp:setting
-    id="mdcGACustom"
+    id="mdcGTAGCustom"
     label="<__trans phrase="Google Analytics custom snippet">"
     show_hint="1"
-hint="cf. https://developers.google.com/analytics/devguides/collection/analyticsjs/advanced
-<br><__trans phrase="For master. If you set the profile ID then you can output to the normal code.">"
+hint="gtag('config', 'UA-1234567-1');  cf. https://developers.google.com/analytics/devguides/collection/app-web/basic-tag?technology=gtagjs
+<br><__trans phrase="You can add any properties. See the help URL">"
 >
-    <textarea name="mdcGACustom" id="mdcGACustom" rows="4" style="width: 100%;"><mt:var name="mdcGACustom"></textarea>
+    <textarea name="mdcGTAGCustom" id="mdcGTAGCustom" rows="4" style="width: 100%;"><mt:var name="mdcGTAGCustom"></textarea>
 </mtapp:setting>
+
+<script>
+let _STYLES = "#mdcGTAGmeasurement textarea:invalid {";
+_STYLES +=  "border: 4px solid red;";
+_STYLES += "}";
+_STYLES += "mdcGTAGmeasurement textarea:valid {";
+_STYLES += "  border: inherit;";
+_STYLES += "}";
+let Style = document.createElement('style');
+Style.type = 'text/css';
+Style.innerText = _STYLES;
+
+document.head.appendChild(Style);
+const ex="^[a-zA-Z0-9!-/:-@¥[-`{-~]*$";
+
+document.getElementById('mdcGTAGCustom').setAttribute('pattern',ex); 
+</script>

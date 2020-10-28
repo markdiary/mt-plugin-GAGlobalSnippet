@@ -1,59 +1,25 @@
-Movable Type Plugin GoogleAnalytics Global Snippet
+## Movable Type Plugin GoogleAnalytics Global Snippet  for gtag.js
 
-・ This plugin provide for fuction tag Google Analytics snippet(global snippet)
-・ Supported customization snippet
-・ Template tag is <$MTGAGlobalSnippet$>
+- This plugin provide for fuction tag Google Analytics snippet(gtag.js whth Analytics 4)
+- Template tag is <$MTGAGlobalSnippet$>
 
-Installation
+*caution*:
 
- 1. This folder(/GAGlobalSnippet/) upload to system plugins directory.
+This plugin requires Alanytics 4 property and measurement ID.
+This plugin is in beta.
+This is because the specifications of the Analytics ４ property are subject to change.
+
+## Installation
+
+ 1. This folder(/GAGlobalSnippet/) upload to Movable Type plugins directory.
  2. Check to the Plugins list. Then display the "GoogleAnalytics Global Snippet",it is success.
 
-Set up
+## Set up
 
- This plugin scope for Blogs. (You can set up to Blog plugin setting.)
+This plugin scope for Blogs. (You can set up to Blog plugin setting.)
+Input for measurement ID like a G-XXXXXXX from your data stream.
 
- If you are able to use "Google Analytics Global Snippet", get GA Snippet from admin Tracking Code page.
 
- ・Google Analytics Profile ID
+## LICENSE
 
-  1. Input for profile ID like a UA-XXXXX-Y from the snippet.
-  
-
- ・Domain
- 
-  1. Input for Domain (from the snippet ga("create","UA-XXXXX-Y","example.com" <== THIS! ) or optional).
-  2. Default is "auto". If this field is empty, for example output [ ga('create', 'UA-XXXXX-Y', 'auto'); ]
- 
- 
- ・Google Analytics custom snippet
-
-  1. This field is optional and for master. If you have already set the profile ID and domain, output snippets is normal code.
-  2. Read more at https://developers.google.com/analytics/devguides/collection/analyticsjs/advanced
-
-Optional modifiers
-
-  profile="foo"
-
-    Overwrite Profile ID.
-
-  domain="foo"
-
-    Overwrite Domain.
-
-  custom="foo"
-     
-    Additional customization snippet.
-     
-example:
-
-<$MTGAGlobalSnippet profile="UA-12345-6" custom="ga('send', 'event', 'image1', 'clicked');"$>
-
-caution
-
- This plugin is not validated for combination customization snippet.
- Please customize snippet at your own risk.
-
-LICENSE
-
- MIT License (on Movable Type 6.x)
+MIT License
