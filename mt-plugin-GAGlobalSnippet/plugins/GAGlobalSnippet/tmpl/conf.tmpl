@@ -1,0 +1,37 @@
+<mtapp:setting
+  id="mdcGTAGmeasurement"
+  label="<__trans phrase="">"
+  show_hint="1"
+  hint="example: G-TAGMeasurement-ID"
+>
+<p>
+  <input placeholder="G-TAGMeasurement-ID" type="text" name="mdcGTAGmeasurement" id="mdcGTAGmeasurement" value="<mt:if name="mdcGTAGmeasurement"><mt:var name="mdcGTAGmeasurement"></mt:if>" />
+</p>
+</mtapp:setting>
+
+<mtapp:setting
+    id="mdcGTAGCustom"
+    label="<__trans phrase="Google Analytics custom snippet">"
+    show_hint="1"
+hint="gtag('config', 'UA-1234567-1');  cf. https://developers.google.com/analytics/devguides/collection/app-web/basic-tag?technology=gtagjs
+<br><__trans phrase="You can add any properties. See the help URL">"
+>
+    <textarea name="mdcGTAGCustom" id="mdcGTAGCustom" rows="4" style="width: 100%;"><mt:var name="mdcGTAGCustom"></textarea>
+</mtapp:setting>
+
+<script>
+let _STYLES = "#mdcGTAGmeasurement textarea:invalid {";
+_STYLES +=  "border: 4px solid red;";
+_STYLES += "}";
+_STYLES += "mdcGTAGmeasurement textarea:valid {";
+_STYLES += "  border: inherit;";
+_STYLES += "}";
+let Style = document.createElement('style');
+Style.type = 'text/css';
+Style.innerText = _STYLES;
+
+document.head.appendChild(Style);
+const ex="^[a-zA-Z0-9!-/:-@¥[-`{-~]*$";
+
+document.getElementById('mdcGTAGCustom').setAttribute('pattern',ex); 
+</script>
