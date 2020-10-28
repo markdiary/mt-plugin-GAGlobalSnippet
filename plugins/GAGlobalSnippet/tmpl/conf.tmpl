@@ -18,20 +18,3 @@ hint="gtag('config', 'UA-1234567-1');  cf. https://developers.google.com/analyti
 >
     <textarea name="mdcGTAGCustom" id="mdcGTAGCustom" rows="4" style="width: 100%;"><mt:var name="mdcGTAGCustom"></textarea>
 </mtapp:setting>
-
-<script>
-let _STYLES = "#mdcGTAGmeasurement textarea:invalid {";
-_STYLES +=  "border: 4px solid red;";
-_STYLES += "}";
-_STYLES += "mdcGTAGmeasurement textarea:valid {";
-_STYLES += "  border: inherit;";
-_STYLES += "}";
-let Style = document.createElement('style');
-Style.type = 'text/css';
-Style.innerText = _STYLES;
-
-document.head.appendChild(Style);
-const ex="^[a-zA-Z0-9!-/:-@¥[-`{-~]*$";
-
-document.getElementById('mdcGTAGCustom').setAttribute('pattern',ex); 
-</script>
