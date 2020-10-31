@@ -4,8 +4,8 @@ name: GoogleAnalytics Global Snippet
 version: 0.1
 description:  <__trans phrase="Google Anaritics global snippet functiontag">
 author_name: maRk
-author_link: http://labs.markdiary.com/
-doc_link: http://labs.markdiary.com/logs/2014/05/google-analytics-global-snippet-plugin.html
+author_link: https://labs.markdiary.com/
+doc_link: https://labs.markdiary.com/logs/2014/05/google-analytics-global-snippet-plugin.html
 
 blog_config_template: conf.tmpl
 settings:
